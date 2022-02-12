@@ -1,0 +1,118 @@
+/*btn*/
+.openbtn {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    background-color: rgba(79, 39, 2, 0.9);
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.openbtn span {
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    left: 14px;
+    border-radius: 2px;
+    background-color: #fffff9;
+    width: 45%;
+    height: 3px;
+}
+
+.openbtn span:nth-of-type(1) {
+    top: 15px;
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+.fadeDown {
+    animation-name: fadeDownAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    display: block;
+}
+@keyframes fadeDownAnime{
+  from {
+    opacity: 0;
+	transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/*header*/
+#header.done {
+	opacity: 0;
+}
+
+#header.done.panelactive {
+	opacity: 1;
+}
+
+/*.done header*/
+#header.done #gNavi{
+    position: fixed;
+	top: 0;
+    left: 0;
+	z-index: -1; 
+	width:100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;  
+    opacity: 0;
+	transition: all 0.4s;
+}
+
+#header.done.panelactive #gNavi{
+	z-index: 3;
+	background: rgba(79, 39, 2, 1);
+}
+
+#header.done.panelactive #gNavi ul{
+	display: block;
+}
+
+#header.dnone.panelactive #g-navi li a{
+	color: #fffff9;
+	text-decoration: none;
+	padding: 10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+	transition: all 0.3s;
+}
